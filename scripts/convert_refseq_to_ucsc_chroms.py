@@ -6,8 +6,8 @@ import tempfile
 def load_chr_mapping(mapping_file):
     """
     Load chromosome mapping from file.
-    Expected format: refseq_chr<tab>ucsc_chr
-    Example: NC_000001.11    chr1
+    Expected format: refseq_chr<space>ucsc_chr
+    Example: NC_060925.1 chr1
     """
     chr_map = {}
     with open(mapping_file, 'r') as f:
@@ -16,7 +16,7 @@ def load_chr_mapping(mapping_file):
             chr_map[refseq] = ucsc
     return chr_map
 
-def convert_sort_and_index_bam(input_bam, output_bam, chr_map, threads=12):
+def convert_sort_and_index_bam(input_bam, output_bam, chr_map, threads=8):
     """
     Convert chromosome names in BAM file using provided mapping,
     sort by coordinate, and create index.
