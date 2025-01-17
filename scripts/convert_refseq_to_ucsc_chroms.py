@@ -67,9 +67,9 @@ def convert_sort_and_index_bam(input_bam, output_bam, chr_map, threads=12):
 
 def main():
     parser = argparse.ArgumentParser(description='Convert chromosome names in BAM file from RefSeq to UCSC style, then sort, and index the converted bam file')
-    parser.add_argument('input_bam', help='Input BAM file')
-    parser.add_argument('output_bam', help='Output BAM file')
-    parser.add_argument('mapping_file', help='Space-delimited file mapping RefSeq to UCSC chromosome names (no header)')
+    parser.add_argument('-i','--input_bam', required=True, help='Input BAM file')
+    parser.add_argument('-o','--output_bam', required=True, help='Output BAM file')
+    parser.add_argument('-m', '--mapping_file', required=True, help='Space-delimited file mapping RefSeq to UCSC chromosome names (no header)')
     parser.add_argument('--threads', type=int, default=8, help='Number of threads for sorting (default: 8)')
     
     args = parser.parse_args()
