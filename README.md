@@ -1,8 +1,12 @@
 # NameThatChrom
 
+Welcome to NameThatChrom Jeopardy!
+
+What is NameThatChrom?
 This script converts chromosome names in a BAM file from RefSeq to UCSC style, sorts the converted BAM file, and indexes it.
 
-***Command-Line Arguments**
+
+**Command-Line Arguments**
 | Argument         | Description                                                                                     | Required | Default |
 |------------------|-------------------------------------------------------------------------------------------------|----------|---------|
 | `input_bam`      | Input BAM file path.                                                                            | Yes      | N/A     |
@@ -12,7 +16,13 @@ This script converts chromosome names in a BAM file from RefSeq to UCSC style, s
 
 Note: this does not overwrite the provided BAM file, instead it will make a new one, so be sure to provide a unique name for the new output BAM
 
-## Usage
+## How to play
+1. Insert your bam file
+2. Choos your category: 'RefSeq to UCSC'
+3. Get your UCSC-style output and claim your points!
+
+
+## Okay, but really, how to use this tool
 1. Locate BAM filed intended for conversion
 2. Ensure the 'data/chr_mapping.txt' file contains the desired mappings
 3. Run the script
@@ -42,7 +52,7 @@ MAPPING_FILE="/data/chr_mapping.txt"
 
 
 # run script
-python /path/to/convert_refseq_to_ucsc_chroms.py \
+python /scripts/convert_refseq_to_ucsc_chroms.py \
        --input_bam $INPUT_BAM \
        --output_bam $OUTPUT_BAM \
        --mapping_file $MAPPING_FILE \
