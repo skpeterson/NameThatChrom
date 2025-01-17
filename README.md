@@ -20,7 +20,7 @@ Note: this does not overwrite the provided BAM file, instead it will make a new 
 
 ## Example Bash Script
 
-If you're working on a Linux based HPC system, here how you would run the script
+If you're working on a Linux based HPC system, here's how you would run the script
 
 ```bash
 #!/bin/bash
@@ -38,14 +38,14 @@ module load python/3.11.9
 
 INPUT_BAM="/path/to/bam/to/convert/sample.bam"
 OUTPUT_BAM="path/to/where/new/bam/should/go/sample_converted.bam"
-MAPPING_FILE="/path/to/mapping/file/chr_mapping.txt"
+MAPPING_FILE="/data/chr_mapping.txt"
 
 
 # run script
 python /path/to/convert_refseq_to_ucsc_chroms.py \
-       $INPUT_BAM \
-       $OUTPUT_BAM \
-       $MAPPING_FILE \
+       --input_bam $INPUT_BAM \
+       --output_bam $OUTPUT_BAM \
+       --mapping_file $MAPPING_FILE \
        --threads 12
 ```
 
